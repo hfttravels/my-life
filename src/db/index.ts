@@ -8,12 +8,9 @@ if (!process.env.DATABASE_URL) {
 }
 
 function createDb() {
-  const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) {
-    throw new Error(
-      "DATABASE_URL environment variable is not defined. Please set it in .env.local"
-    );
-  }
+  const connectionString =
+    process.env.DATABASE_URL ||
+    "postgresql://postgres:postgres@localhost:5432/postgres";
   const sql = neon(connectionString);
   return drizzle(sql, { schema });
 }

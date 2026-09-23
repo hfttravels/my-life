@@ -11,6 +11,8 @@ import {
 } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 export async function PUT(
   request: NextRequest,
   props: { params: Promise<{ id: string }> }

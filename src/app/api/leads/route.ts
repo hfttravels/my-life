@@ -10,6 +10,8 @@ import {
 } from "@/lib/notifications/channels";
 import { eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 const leadSchema = z.object({
   name: z.string().min(1, "Name is required").max(200),
   phone: z
