@@ -1,0 +1,84 @@
+.banner {
+  background-color: var(--primary-light);
+  padding: 16px 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0 20px;
+  }
+}
+
+.reviewItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  font-family: Georgia, serif;
+  flex-shrink: 0;
+}
+
+.googleIcon {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.tripadvisorIcon {
+  background: #00af87;
+}
+
+.facebookIcon {
+  background: #1877f2;
+  font-size: 1.35rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #333;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.star {
+  color: #FFC107; /* Yellow star */
+  font-size: 1.1rem;
+}
+
+.count {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1;
+}

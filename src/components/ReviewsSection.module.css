@@ -1,0 +1,365 @@
+.section {
+  padding: 50px 0 60px 0;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3.5vw, 56px);
+  box-sizing: border-box;
+}
+
+/* Header Row matching screenshot */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 750;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Navigation controls */
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover:not(.navBtnDisabled) {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+.navBtnDisabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Carousel wrapper for swipe gesture */
+.carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.carouselWrapper:active {
+  cursor: grabbing;
+}
+
+/* Slider Track */
+.sliderTrack {
+  display: flex;
+  width: 100%;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 2x2 Grid for each page of 4 reviews */
+.pageGrid {
+  flex: 0 0 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Review Card matching screenshot */
+.reviewCard {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  height: 155px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+/* Left traveler photo */
+.imageWrapper {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* Right card content */
+.content {
+  flex: 1;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Golden stars */
+.starsRow {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 2px;
+}
+
+.star {
+  color: #f59e0b;
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* Review text with clamp */
+.reviewText {
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12.2px;
+  line-height: 1.45;
+  color: #475569;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.readMoreBtn {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  display: inline;
+  margin-left: 3px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.readMoreBtn:hover {
+  color: #0369a1;
+}
+
+/* Author row */
+.authorRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.authorName {
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: 0.01em;
+}
+
+/* Pagination Dots */
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.dot:hover {
+  background-color: #94a3b8;
+}
+
+.activeDot {
+  width: 24px;
+  border-radius: 999px;
+  background-color: #ffd000;
+}
+
+/* Read More Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalContent {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalImageWrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.modalTextContent {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modalAuthorName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 6px 0 10px 0;
+}
+
+.modalFullText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pageGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 14px;
+  }
+
+  .reviewCard {
+    height: 145px;
+  }
+
+  .imageWrapper {
+    flex: 0 0 130px;
+    width: 130px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviewCard {
+    height: auto;
+    min-height: 140px;
+  }
+
+  .imageWrapper {
+    flex: 0 0 115px;
+    width: 115px;
+  }
+
+  .content {
+    padding: 10px 12px;
+  }
+
+  .reviewText {
+    font-size: 11.5px;
+    -webkit-line-clamp: 3;
+  }
+
+  .authorName {
+    font-size: 12.5px;
+  }
+}

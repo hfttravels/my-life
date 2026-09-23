@@ -1,0 +1,255 @@
+.section {
+  padding: 60px 0 70px 0;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.svgClip {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.yellowBar {
+  width: 56px;
+  height: 3.5px;
+  background-color: #ffd000;
+  border-radius: 999px;
+  margin: 10px auto 12px auto;
+}
+
+.subtitle {
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Carousel wrapper */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Panoramic Curved Arch viewport */
+.scrollTrack {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  /* Apply the curved arch clip from the SVG definition */
+  clip-path: url(#journeyArchClip);
+  padding: 8px 0;
+}
+
+.scrollTrack::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.scrollTrack.isDragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+/* Continuous frames flex track */
+.framesGrid {
+  display: flex;
+  gap: 5px; /* Thin seams between photos like in screenshot */
+  padding: 0 30px;
+  width: max-content;
+}
+
+/* Individual Frame Tile */
+.frameCard {
+  flex: 0 0 clamp(190px, 16.5vw, 245px);
+  height: clamp(290px, 26vw, 380px);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  background-color: #0f172a;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.frameCard:hover .image {
+  transform: scale(1.06);
+}
+
+.cardGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.2) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Location Pill Badge at bottom left */
+.pillBadge {
+  position: absolute;
+  bottom: 16px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.frameCard:hover .pillBadge {
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-1px);
+}
+
+.pinIcon {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Floating Circular Cyan Navigation Buttons */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #00bcd4;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 188, 212, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.prevBtn {
+  left: clamp(14px, 2.5vw, 36px);
+}
+
+.nextBtn {
+  right: clamp(14px, 2.5vw, 36px);
+}
+
+.arrowBtn:hover {
+  background-color: #00acc1;
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 6px 18px rgba(0, 188, 212, 0.6);
+}
+
+.arrowBtn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.disabledBtn {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0 50px 0;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .frameCard {
+    flex: 0 0 175px;
+    height: 270px;
+  }
+
+  .arrowBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .prevBtn {
+    left: 8px;
+  }
+
+  .nextBtn {
+    right: 8px;
+  }
+
+  .pillBadge {
+    bottom: 12px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+  }
+}

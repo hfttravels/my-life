@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Hassle Free Travels — Cyber-Luxe Admin Theme Extension for Payload CMS 3
+   ========================================================================== */
+
+:root {
+  --theme-elevation-50: #ffffff;
+  --theme-elevation-100: #fbf9fe;
+  --theme-elevation-150: #f5f0fa;
+  --theme-elevation-200: #eee5f7;
+  --theme-elevation-250: #e2d2f2;
+  --theme-border-color: rgba(139, 47, 201, 0.12);
+  --theme-text-color: #0f172a;
+}
+
+/* Glassmorphic Nav & Sidebar */
+nav.nav,
+.nav__wrap,
+aside.nav {
+  background: linear-gradient(180deg, #ffffff 0%, #faf6fe 100%) !important;
+  border-right: 1px solid rgba(139, 47, 201, 0.12) !important;
+  box-shadow: 2px 0 16px rgba(139, 47, 201, 0.03) !important;
+}
+
+/* Nav Links Styling */
+.nav__link,
+.nav a {
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  font-weight: 600 !important;
+}
+
+.nav__link:hover,
+.nav a:hover {
+  background: rgba(139, 47, 201, 0.08) !important;
+  color: #8B2FC9 !important;
+  transform: translateX(3px) !important;
+}
+
+.nav__link--active,
+.nav a[aria-current="page"] {
+  background: linear-gradient(135deg, rgba(139, 47, 201, 0.12), rgba(232, 86, 42, 0.08)) !important;
+  color: #8B2FC9 !important;
+  font-weight: 700 !important;
+  border-left: 3px solid #8B2FC9 !important;
+}
+
+/* Nav Group Headings */
+.nav-group__toggle,
+.nav__label {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  font-weight: 800 !important;
+  color: #8B2FC9 !important;
+  opacity: 0.85 !important;
+}
+
+/* Collection List Cards & Tables */
+.collection-list__wrap,
+.table-wrap {
+  border-radius: 14px !important;
+  border: 1px solid rgba(139, 47, 201, 0.12) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02) !important;
+  overflow: hidden !important;
+}
+
+/* Top App Header */
+header.app-header,
+.app-header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(139, 47, 201, 0.12) !important;
+}
+
+/* Buttons */
+.btn--style-primary,
+button.btn--style-primary {
+  background: linear-gradient(135deg, #8B2FC9 0%, #6B1FA9 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(139, 47, 201, 0.3) !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn--style-primary:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(139, 47, 201, 0.4) !important;
+}
+
+/* Sleek Cyber Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 47, 201, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 47, 201, 0.45);
+}

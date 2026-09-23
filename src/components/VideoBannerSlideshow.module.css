@@ -1,0 +1,292 @@
+.section {
+  padding: 40px 0 60px 0;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 clamp(20px, 3.5vw, 56px);
+  box-sizing: border-box;
+}
+
+/* Panoramic rounded banner container */
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 32vw, 440px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+  background-color: #0f172a;
+}
+
+/* Entire banner acts as a link to destination page */
+.bannerLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Video container with crossfade transition */
+.videoContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.activeVideo {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inactiveVideo {
+  opacity: 0;
+  z-index: 0;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark gradient overlay on the left to ensure high readability */
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.55) 35%,
+    rgba(0, 0, 0, 0.15) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Left-aligned content container */
+.content {
+  position: absolute;
+  left: clamp(28px, 5.5vw, 75px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 620px;
+}
+
+.superTagline {
+  font-size: clamp(0.72rem, 0.95vw, 0.9rem);
+  letter-spacing: 0.18em;
+  font-weight: 750;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.scriptTitle {
+  font-family: 'Dancing Script', 'Caveat', 'Brush Script MT', 'Playfair Display', cursive, sans-serif;
+  font-style: italic;
+  font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+  font-weight: 700;
+  color: #00c0f0;
+  line-height: 1.05;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 4px 16px rgba(0, 192, 240, 0.4);
+}
+
+.subTagline {
+  font-family: 'Caveat', 'Dancing Script', 'Playfair Display', cursive, sans-serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  line-height: 1.25;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Framed starting price box matching screenshot */
+.priceBox {
+  position: relative;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 10px 22px;
+  border-radius: 4px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.topBadge {
+  position: absolute;
+  top: -9px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 1px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.priceText {
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 800;
+  color: #00c0f0;
+  letter-spacing: -0.01em;
+}
+
+.perPerson {
+  font-size: 0.65rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.bottomBadge {
+  position: absolute;
+  bottom: -9px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 1px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+/* Floating left & right arrow buttons */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #00c0f0;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.prevBtn {
+  left: 14px;
+}
+
+.nextBtn {
+  right: 14px;
+}
+
+.arrowBtn:hover {
+  background: #ffffff;
+  color: #0284c7;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Bottom indicator dots */
+.indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 7px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.activeDot {
+  width: 24px;
+  border-radius: 999px;
+  background: #00c0f0;
+  box-shadow: 0 0 8px rgba(0, 192, 240, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .bannerWrapper {
+    height: 320px;
+    border-radius: 14px;
+  }
+
+  .content {
+    left: 20px;
+    right: 20px;
+    max-width: 100%;
+  }
+
+  .scriptTitle {
+    font-size: 2.3rem;
+  }
+
+  .subTagline {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .priceBox {
+    padding: 8px 16px;
+  }
+
+  .priceText {
+    font-size: 1.1rem;
+  }
+
+  .arrowBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .prevBtn {
+    left: 8px;
+  }
+
+  .nextBtn {
+    right: 8px;
+  }
+}

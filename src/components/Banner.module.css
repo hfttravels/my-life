@@ -1,0 +1,173 @@
+.campaignBanner {
+  background-color: var(--primary-light);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0 20px 0;
+}
+
+.bannerHeader {
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--primary);
+}
+
+.logoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.brandName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: -5px;
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-outfit);
+}
+
+.campaignTitle {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.christmas {
+  font-family: var(--font-bebas);
+  letter-spacing: 2px;
+  color: var(--primary);
+}
+
+.ampersand {
+  font-size: 32px;
+  color: var(--primary);
+  font-family: var(--font-outfit);
+}
+
+.newYear {
+  font-family: var(--font-pacifico);
+  font-weight: 400;
+  color: var(--secondary);
+}
+
+.saleTag {
+  background-color: #ff3333;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 4px 16px;
+  border-radius: 4px;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  /* Fading edges (optional) */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.marqueeTrack {
+  display: inline-flex;
+  gap: 16px;
+  /* Animation duration determines speed */
+  animation: scrollMarquee 35s linear infinite;
+}
+
+.marqueeTrack:hover {
+  /* Optional: pause on hover */
+  animation-play-state: paused;
+}
+
+.destinationCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 140px;
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  border-radius: 16px;
+  border: 3px solid var(--primary);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(139, 47, 201, 0.15);
+}
+
+.cardImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.destinationName {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Animation Keyframes */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by exactly half since we duplicated the array */
+    transform: translateX(-50%);
+  }
+}
+
+.bannerFooter {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.discountBadge {
+  background-color: white;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 18px;
+  padding: 8px 30px;
+  border-radius: 50px;
+  border: 3px solid var(--primary);
+  box-shadow: 0 4px 10px rgba(139, 47, 201, 0.15);
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .campaignTitle {
+    font-size: 32px;
+  }
+  .destinationCard {
+    width: 110px;
+  }
+  .cardImageWrapper {
+    height: 110px;
+  }
+  .discountBadge {
+    font-size: 15px;
+    padding: 6px 20px;
+  }
+}

@@ -1,0 +1,175 @@
+.page {
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 150px 20px 70px;
+}
+
+.article {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.backLink {
+  color: #8B2FC9;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.hero {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.kicker {
+  color: #8B2FC9;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  color: #0f172a;
+  font-size: 3rem;
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: #475569;
+  font-size: 1.12rem;
+  max-width: 760px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8B2FC9, #f59e0b);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e2e8f0;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+}
+
+.imageFrame img,
+.relatedImage img {
+  object-fit: cover;
+}
+
+.content {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  margin-top: 34px;
+  padding: 38px;
+  color: #334155;
+  font-size: 1.02rem;
+}
+
+.content h2 {
+  color: #0f172a;
+  font-size: 1.45rem;
+  margin: 28px 0 10px;
+}
+
+.content p {
+  margin-bottom: 16px;
+}
+
+.content ul {
+  padding-left: 22px;
+  line-height: 1.8;
+}
+
+.related {
+  max-width: 920px;
+  margin: 54px auto 0;
+}
+
+.related h2 {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.relatedCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.relatedCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+}
+
+.relatedImage {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #e2e8f0;
+}
+
+.relatedCard span {
+  color: #8B2FC9;
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 14px 14px 6px;
+  text-transform: uppercase;
+}
+
+.relatedCard h3 {
+  font-size: 0.98rem;
+  line-height: 1.35;
+  padding: 0 14px 16px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding-top: 118px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+}

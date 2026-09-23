@@ -1,0 +1,123 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 12px 0;
+  transition: all var(--transition-normal);
+  background-color: transparent;
+}
+
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  padding: 8px 0;
+}
+
+.scrolled .navLink,
+.scrolled .loginBtn {
+  color: var(--text-dark);
+}
+
+.header:not(.scrolled) .navLink,
+.header:not(.scrolled) .loginBtn {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: all var(--transition-fast);
+}
+
+/* On dark backgrounds, the logo might need a white filter - 
+   but since the logo has its own colors, we use a drop-shadow for contrast */
+.header:not(.scrolled) .logoImg {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) brightness(1.15);
+}
+
+.scrolled .logoImg {
+  height: 90px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width var(--transition-fast);
+  border-radius: 2px;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.actions :global(.btn-primary) {
+  white-space: nowrap;
+}
+
+.loginBtn {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logoImg {
+    height: 58px;
+  }
+
+  .actions :global(.btn-primary) {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+}

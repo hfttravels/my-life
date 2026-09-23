@@ -1,0 +1,41 @@
+{
+  "name": "hassle-free-travels",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:seed": "tsx src/db/seed.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "@payloadcms/db-postgres": "^3.90.1",
+    "@payloadcms/next": "^3.90.1",
+    "@payloadcms/richtext-lexical": "^3.90.1",
+    "@payloadcms/ui": "^3.90.1",
+    "drizzle-orm": "^0.45.2",
+    "graphql": "^16.14.2",
+    "jose": "^6.2.12",
+    "next": "16.3.3",
+    "payload": "^3.90.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "sharp": "^0.35.4",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "tsx": "^4.23.13",
+    "typescript": "^5"
+  }
+}
