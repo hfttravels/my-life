@@ -65,7 +65,6 @@ export const FlightMesh3D: React.FC = () => {
     if (!ctx) return
 
     let animationFrameId: number
-    let lastTime = performance.now()
     let frameCount = 0
     let fpsTimer = performance.now()
 

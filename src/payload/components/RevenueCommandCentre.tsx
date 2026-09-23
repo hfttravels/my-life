@@ -141,11 +141,18 @@ export const RevenueCommandCentre: React.FC = () => {
     }
   }
 
+  const didInit = useRef(false)
+
   useEffect(() => {
-    fetchStats()
-    handleAskAI()
-    setIsMuted(sound.isMuted())
-  }, [])
+    if (didInit.current) return
+    didInit.current = true
+    // Defer data fetching to avoid synchronous setState in effect body
+    queueMicrotask(() => {
+      fetchStats()
+      handleAskAI()
+      setIsMuted(sound.isMuted())
+    })
+  })
 
   const formatCurrency = (amount: number) => {
     return '₹' + amount.toLocaleString('en-IN')
@@ -523,7 +530,7 @@ export const RevenueCommandCentre: React.FC = () => {
               {filteredLeads.length === 0 ? (
                 <tr>
                   <td colSpan={7} style={{ textAlign: 'center', padding: '28px', color: '#94a3b8' }}>
-                    No matching enquiries in this view. Click <strong>"Simulate Live Inbound Lead"</strong> above to test!
+                    No matching enquiries in this view. Click <strong>&quot;Simulate Live Inbound Lead&quot;</strong> above to test!
                   </td>
                 </tr>
               ) : (

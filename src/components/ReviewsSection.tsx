@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import styles from "./ReviewsSection.module.css";
 
@@ -90,7 +90,7 @@ export default function ReviewsSection() {
   const [isDragging, setIsDragging] = useState(false);
   const [mouseStartX, setMouseStartX] = useState<number | null>(null);
 
-  const totalPages = 2; // Page 0 (reviews 1-4), Page 1 (reviews 5-8)
+
 
   const handleNext = useCallback(() => {
     setActivePage((prev) => (prev === 0 ? 1 : 0));

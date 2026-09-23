@@ -56,8 +56,6 @@ const leadSchema = z.object({
   website: z.string().optional(),
 });
 
-type LeadPayload = z.infer<typeof leadSchema>;
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();

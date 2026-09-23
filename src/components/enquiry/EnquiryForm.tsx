@@ -122,8 +122,6 @@ export function EnquiryForm({
     }
   }
 
-  const cleanPhone = formData.phone.replace(/[^0-9]/g, '')
-  const whatsappTarget = cleanPhone.startsWith('91') ? cleanPhone : `91${cleanPhone}`
   const targetLabel = packageTitle || destinationTitle || 'your holiday'
 
   if (submitted) {

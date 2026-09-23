@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/db'
-import { leads, destinations, packages } from '@/db/schema'
+import { leads } from '@/db/schema'
 import { count, sql } from 'drizzle-orm'
 
 export async function POST(request: NextRequest) {

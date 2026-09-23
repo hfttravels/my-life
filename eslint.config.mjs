@@ -12,6 +12,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // External downloaded repositories (not part of this project):
+    "react-native-main/**",
+    "react-static-master/**",
+    "superpowers-main/**",
+    "eslint-main/**",
+    "awesome-design-md-main/**",
+    "transformers-main/**",
   ]),
 ]);
 
